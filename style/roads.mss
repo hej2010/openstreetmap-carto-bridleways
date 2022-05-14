@@ -15,6 +15,7 @@
 @cycleway-fill-noaccess: #9999ff;
 @bridleway-fill: green;
 @bridleway-fill-noaccess: #db4346;
+@bridleway-fill-path: 12aa12;
 @track-fill: #996600;
 @track-fill-noaccess: #e2c5bb;
 @aeroway-fill: #bbc;
@@ -112,7 +113,7 @@
 @tertiary-link-width-z13:         3;
 @residential-width-z13:           2.5;
 @living-street-width-z13:         2;
-@bridleway-width-z13:             4.3;
+@bridleway-width-z13:             4;
 @footway-width-z14:               0.7;
 @cycleway-width-z13:              0.7;
 @track-width-z13:                 0.5;
@@ -141,7 +142,7 @@
 @residential-width-z15:           5;
 @living-street-width-z15:         5;
 @pedestrian-width-z15:            5;
-@bridleway-width-z15:             4.2;
+@bridleway-width-z15:             3.8
 @footway-width-z15:               1;
 @cycleway-width-z15:              0.9;
 @track-width-z15:                 1.5;
@@ -1827,8 +1828,6 @@ tertiary is rendered from z10 and is not included in osm_planet_roads. */
 
     [feature = 'highway_bridleway'],
     [feature = 'highway_path'][horse = 'designated'],
-    [feature = 'highway_path'][horse = 'yes'],
-    [feature = 'highway_track'][horse = 'yes'], 
     [feature = 'highway_track'][horse = 'designated'] {
       [zoom >= 10][access != 'no'],
       [zoom >= 15] {
@@ -1842,6 +1841,29 @@ tertiary is rendered from z10 and is not included in osm_planet_roads. */
         line/line-color: @bridleway-fill;
         [access = 'no'] { line/line-color: @bridleway-fill-noaccess; }
         line/line-dasharray: 4,2;
+        line/line-width: @bridleway-width-z13;
+        [zoom >= 15] { line/line-width: @bridleway-width-z15; }
+        #tunnels {
+          line/line-join: round;
+          line/line-cap: round;
+        }
+      }
+    }
+    
+    [feature = 'highway_path'][horse = 'yes'],
+    [feature = 'highway_track'][horse = 'yes'] {
+      [zoom >= 10][access != 'no'],
+      [zoom >= 15] {
+        #roads-fill[zoom >= 15] {
+          background/line-color: @bridleway-casing;
+          background/line-cap: round;
+          background/line-join: round;
+          background/line-width: @bridleway-width-z15 + 2 * @paths-background-width;
+          background/line-opacity: 0.4;
+        }
+        line/line-color: @bridleway-fill;
+        [access = 'no'] { line/line-color: @bridleway-fill-noaccess; }
+        line/line-dasharray: 2,1;
         line/line-width: @bridleway-width-z13;
         [zoom >= 15] { line/line-width: @bridleway-width-z15; }
         #tunnels {
