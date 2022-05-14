@@ -15,7 +15,7 @@
 @cycleway-fill-noaccess: #9999ff;
 @bridleway-fill: green;
 @bridleway-fill-noaccess: #db4346;
-@bridleway-fill-path: 12aa12;
+@bridleway-fill-path: #12aa12;
 @track-fill: #996600;
 @track-fill-noaccess: #e2c5bb;
 @aeroway-fill: #bbc;
@@ -1861,7 +1861,7 @@ tertiary is rendered from z10 and is not included in osm_planet_roads. */
           background/line-width: @bridleway-width-z15 + 2 * @paths-background-width;
           background/line-opacity: 0.4;
         }
-        line/line-color: @bridleway-fill;
+        line/line-color: @bridleway-fill-path;
         [access = 'no'] { line/line-color: @bridleway-fill-noaccess; }
         line/line-dasharray: 2,1;
         line/line-width: @bridleway-width-z13;
