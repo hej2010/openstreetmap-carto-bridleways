@@ -1826,7 +1826,10 @@ tertiary is rendered from z10 and is not included in osm_planet_roads. */
     }
 
     [feature = 'highway_bridleway'],
-    [feature = 'highway_path'][horse = 'designated'] {
+    [feature = 'highway_path'][horse = 'designated'],
+    [feature = 'highway_path'][horse = 'yes'],
+    [feature = 'highway_track'][horse = 'yes'], 
+    [feature = 'highway_track'][horse = 'designated'] {
       [zoom >= 10][access != 'no'],
       [zoom >= 15] {
         #roads-fill[zoom >= 15] {
@@ -1845,13 +1848,6 @@ tertiary is rendered from z10 and is not included in osm_planet_roads. */
           line/line-join: round;
           line/line-cap: round;
         }
-      }
-    }
-    
-    [feature = 'highway_path'][horse = 'no'] {
-      [zoom >= 10] {
-        line/line-width: 4.5;
-        line/line-color: @bridleway-fill-noaccess;
       }
     }
 
