@@ -1848,7 +1848,7 @@ tertiary is rendered from z10 and is not included in osm_planet_roads. */
       }
     }
     [feature = 'highway_path'][horse = 'no'] {
-      [zoom >= 10][access == 'no'],
+      [zoom >= 10],
       [zoom >= 15] {
         #roads-fill[zoom >= 15] {
           background/line-color: @bridleway-casing;
