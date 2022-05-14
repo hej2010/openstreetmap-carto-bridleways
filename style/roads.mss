@@ -14,7 +14,7 @@
 @cycleway-fill: blue;
 @cycleway-fill-noaccess: #9999ff;
 @bridleway-fill: green;
-@bridleway-fill-noaccess: #aaddaa;
+@bridleway-fill-noaccess: #db4346;
 @track-fill: #996600;
 @track-fill-noaccess: #e2c5bb;
 @aeroway-fill: #bbc;
