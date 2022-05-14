@@ -142,7 +142,7 @@
 @residential-width-z15:           5;
 @living-street-width-z15:         5;
 @pedestrian-width-z15:            5;
-@bridleway-width-z15:             3.8
+@bridleway-width-z15:             3.8;
 @footway-width-z15:               1;
 @cycleway-width-z15:              0.9;
 @track-width-z15:                 1.5;
